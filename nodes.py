@@ -1041,7 +1041,7 @@ class EmptyLatentImage:
         return ({"samples":latent}, )
 
 
-class GaussianLatentImage:
+class MagicAlbum3DGaussianNoise:
     def __init__(self):
         self.device = comfy.model_management.intermediate_device()
     @classmethod
@@ -1049,6 +1049,7 @@ class GaussianLatentImage:
         return {"required": { "width": ("INT", {"default": 512, "min": 16, "max": MAX_RESOLUTION, "step": 8}),
                               "height": ("INT", {"default": 512, "min": 16, "max": MAX_RESOLUTION, "step": 8}),
                               "batch_size": ("INT", {"default": 1, "min": 1, "max": 4096}),
+                              "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
                               "cov_factor": ("FLOAT", {"default": 0.2, "min": 0.0, "max": 1.0, "step": 0.05})}}
     RETURN_TYPES = ("LATENT",)
     FUNCTION = "generate"
@@ -1062,7 +1063,8 @@ class GaussianLatentImage:
         return cov
 
 
-    def generate(self, width, height, batch_size=1, cov_factor=0.2):
+    def generate(self, width, height, batch_size=1, seed=0, cov_factor=0.2):
+        torch.manual_seed(seed)
         dist = torch.distributions.multivariate_normal.MultivariateNormal(torch.zeros(batch_size), self.get_cov_mat(batch_size, alpha=cov_factor))
         shape = (4, height // 8, width // 8)
 
@@ -1787,7 +1789,7 @@ NODE_CLASS_MAPPINGS = {
     "VAEEncodeForInpaint": VAEEncodeForInpaint,
     "VAELoader": VAELoader,
     "EmptyLatentImage": EmptyLatentImage,
-    "GaussianLatentImage": GaussianLatentImage,
+    "MagicAlbum3DGaussianNoise": MagicAlbum3DGaussianNoise,
     "LatentUpscale": LatentUpscale,
     "LatentUpscaleBy": LatentUpscaleBy,
     "LatentFromBatch": LatentFromBatch,
@@ -1884,7 +1886,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "LatentFlip": "Flip Latent",
     "LatentCrop": "Crop Latent",
     "EmptyLatentImage": "Empty Latent Image",
-    "GaussianLatentImage": "Gaussian latent image",
+    "MagicAlbum3DGaussianNoise": "Magic Album 3D Gaussian Noise",
     "LatentUpscale": "Upscale Latent",
     "LatentUpscaleBy": "Upscale Latent By",
     "LatentComposite": "Latent Composite",
