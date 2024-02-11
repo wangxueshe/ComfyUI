@@ -1,6 +1,6 @@
 export const defaultGraph = {
-    last_node_id: 266,
-    last_link_id: 422,
+    last_node_id: 273,
+    last_link_id: 423,
     nodes: [{
         id: 55,
         type: "Reroute",
@@ -52,29 +52,6 @@ export const defaultGraph = {
         },
         color: "#322",
         bgcolor: "#533"
-    }, {
-        id: 60,
-        type: "Reroute",
-        pos: [1059.68880524605, 1446.6760521000192],
-        size: [75, 26],
-        flags: {},
-        order: 25,
-        mode: 0,
-        inputs: [{
-            name: "",
-            type: "*",
-            link: 99
-        }],
-        outputs: [{
-            name: "",
-            type: "BASIC_PIPE",
-            links: [138],
-            slot_index: 0
-        }],
-        properties: {
-            showOutputText: false,
-            horizontal: false
-        }
     }, {
         id: 59,
         type: "Reroute",
@@ -520,7 +497,7 @@ export const defaultGraph = {
         properties: {
             "Node name for S&R": "KSamplerAdvanced"
         },
-        widgets_values: ["disable", 769736687828962, "randomize", 20, 8, "dpmpp_2m", "karras", 0, 20, "disable"]
+        widgets_values: ["disable", 774476516625499, "randomize", 20, 8, "dpmpp_2m", "karras", 0, 20, "disable"]
     }, {
         id: 175,
         type: "FromBasicPipe",
@@ -664,7 +641,7 @@ export const defaultGraph = {
         properties: {
             "Node name for S&R": "UltimateSDUpscale"
         },
-        widgets_values: [2, 752234271638353, "randomize", 20, 8, "euler", "normal", 0.2, "Linear", 512, 512, 8, 32, "None", 1, 64, 8, 16, true, false]
+        widgets_values: [2, 362524318073972, "randomize", 20, 8, "euler", "normal", 0.2, "Linear", 512, 512, 8, 32, "None", 1, 64, 8, 16, true, false]
     }, {
         id: 183,
         type: "ImageCASharpening+",
@@ -739,7 +716,7 @@ export const defaultGraph = {
                 hidden: false,
                 paused: false,
                 params: {
-                    filename: "face_detailer_00011.mp4",
+                    filename: "face_detailer_00021.mp4",
                     subfolder: "",
                     type: "temp",
                     format: "video/h264-mp4"
@@ -792,7 +769,7 @@ export const defaultGraph = {
                 hidden: false,
                 paused: true,
                 params: {
-                    filename: "orig_00011.mp4",
+                    filename: "orig_00029.mp4",
                     subfolder: "",
                     type: "temp",
                     format: "video/h264-mp4"
@@ -847,7 +824,7 @@ export const defaultGraph = {
                 hidden: false,
                 paused: false,
                 params: {
-                    filename: "SR_00018.mp4",
+                    filename: "SR_00053.mp4",
                     subfolder: "",
                     type: "output",
                     format: "video/h265-mp4"
@@ -876,46 +853,6 @@ export const defaultGraph = {
             "Node name for S&R": "ImpactInt"
         },
         widgets_values: [16]
-    }, {
-        id: 202,
-        type: "BatchPromptSchedule",
-        pos: [109, 1187],
-        size: {
-            "0": 379.556396484375,
-            "1": 501.3092041015625
-        },
-        flags: {},
-        order: 15,
-        mode: 0,
-        inputs: [{
-            name: "clip",
-            type: "CLIP",
-            link: 406
-        }, {
-            name: "max_frames",
-            type: "INT",
-            link: 270,
-            widget: {
-                name: "max_frames"
-            }
-        }],
-        outputs: [{
-            name: "POS",
-            type: "CONDITIONING",
-            links: [373],
-            shape: 3,
-            slot_index: 0
-        }, {
-            name: "NEG",
-            type: "CONDITIONING",
-            links: [],
-            shape: 3,
-            slot_index: 1
-        }],
-        properties: {
-            "Node name for S&R": "BatchPromptSchedule"
-        },
-        widgets_values: ["\"0\":\"\",\n\"8\":\"\"", 120, false, "Photo of a hot embedding:altman-gstep-200 man driving a classic car, smirking", "In 1950s New York, Night, hyperdetailed photography. Captured on a 35mm camera, black and white, classic film. inside Film Still, film grain, Movie Still, Film Still, Cinematic, Cinematic Shot, Cinematic Lighting\n", 0, 0, 0, 0, 0]
     }, {
         id: 2,
         type: "VAELoader",
@@ -1074,33 +1011,6 @@ export const defaultGraph = {
         },
         widgets_values: [512, 512, 1]
     }, {
-        id: 262,
-        type: "MagicAlbum3DGaussianNoise",
-        pos: [736, 988],
-        size: [315, 178],
-        flags: {},
-        order: 13,
-        mode: 0,
-        inputs: [{
-            name: "batch_size",
-            type: "INT",
-            link: 422,
-            widget: {
-                name: "batch_size"
-            }
-        }],
-        outputs: [{
-            name: "LATENT",
-            type: "LATENT",
-            links: [420],
-            shape: 3,
-            slot_index: 0
-        }],
-        properties: {
-            "Node name for S&R": "MagicAlbum3DGaussianNoise"
-        },
-        widgets_values: [512, 512, 1, 1053257906239373, "randomize", 0.2]
-    }, {
         id: 253,
         type: "BNK_InjectNoise",
         pos: [1629, 684],
@@ -1144,55 +1054,6 @@ export const defaultGraph = {
             "Node name for S&R": "BNK_InjectNoise"
         },
         widgets_values: [1]
-    }, {
-        id: 261,
-        type: "ADE_AnimateDiffLoaderWithContext",
-        pos: [311, 85],
-        size: {
-            "0": 315,
-            "1": 230
-        },
-        flags: {
-            collapsed: true
-        },
-        order: 16,
-        mode: 0,
-        inputs: [{
-            name: "model",
-            type: "MODEL",
-            link: 415
-        }, {
-            name: "context_options",
-            type: "CONTEXT_OPTIONS",
-            link: 416
-        }, {
-            name: "motion_lora",
-            type: "MOTION_LORA",
-            link: 417
-        }, {
-            name: "ad_settings",
-            type: "AD_SETTINGS",
-            link: null
-        }, {
-            name: "sample_settings",
-            type: "SAMPLE_SETTINGS",
-            link: null
-        }, {
-            name: "ad_keyframes",
-            type: "AD_KEYFRAMES",
-            link: null
-        }],
-        outputs: [{
-            name: "MODEL",
-            type: "MODEL",
-            links: [418],
-            shape: 3,
-            slot_index: 0
-        }],
-        properties: {
-            "Node name for S&R": "ADE_AnimateDiffLoaderWithContext"
-        },
-        widgets_values: ["mm_sd_v15_v2.ckpt", "autoselect", 1, true]
     }, {
         id: 32,
         type: "CheckpointLoaderSimple",
@@ -1287,33 +1148,6 @@ export const defaultGraph = {
         },
         widgets_values: ["dpmpp_2m", "karras", 20, 0, 20]
     }, {
-        id: 196,
-        type: "ADE_AnimateDiffLoRALoader",
-        pos: [-375, -182],
-        size: {
-            "0": 355.20001220703125,
-            "1": 82
-        },
-        flags: {},
-        order: 6,
-        mode: 0,
-        inputs: [{
-            name: "prev_motion_lora",
-            type: "MOTION_LORA",
-            link: null
-        }],
-        outputs: [{
-            name: "MOTION_LORA",
-            type: "MOTION_LORA",
-            links: [417],
-            shape: 3,
-            slot_index: 0
-        }],
-        properties: {
-            "Node name for S&R": "ADE_AnimateDiffLoRALoader"
-        },
-        widgets_values: ["v2_lora_ZoomIn.ckpt", 0.9]
-    }, {
         id: 75,
         type: "UltralyticsDetectorProvider",
         pos: [2088, 1625],
@@ -1322,7 +1156,7 @@ export const defaultGraph = {
             "1": 78
         },
         flags: {},
-        order: 7,
+        order: 6,
         mode: 0,
         outputs: [{
             name: "BBOX_DETECTOR",
@@ -1344,26 +1178,15 @@ export const defaultGraph = {
         color: "#322",
         bgcolor: "#533"
     }, {
-        id: 263,
-        type: "Note",
-        pos: [-423, 1338],
-        size: [504.50054427217833, 130.1720954327543],
-        flags: {},
-        order: 8,
-        mode: 0,
-        properties: {
-            text: ""
-        },
-        widgets_values: ["Magic Album - Prompt Travel\nUse Batch Prompt Schedule to assign different prompts for different range of frames.\n\nFor example, with the SCG Emotions Pack from (https://civitai.com/models/8860), the user can change the expression of the character by typing:\n\n\"0\":\"embedding:emotion-grin\",\n\"8\":\"embedding:emotion-smile\"\n\n"],
-        color: "#432",
-        bgcolor: "#653"
-    }, {
         id: 264,
         type: "Note",
         pos: [620, 1218],
-        size: [534.8900024414022, 72.82634277343573],
+        size: {
+            "0": 534.8900146484375,
+            "1": 72.82633972167969
+        },
         flags: {},
-        order: 9,
+        order: 7,
         mode: 0,
         properties: {
             text: ""
@@ -1375,9 +1198,12 @@ export const defaultGraph = {
         id: 265,
         type: "Note",
         pos: [2426, 1444],
-        size: [583.9655622171758, 78.526563940909],
+        size: {
+            "0": 583.965576171875,
+            "1": 78.52656555175781
+        },
         flags: {},
-        order: 10,
+        order: 8,
         mode: 0,
         properties: {
             text: ""
@@ -1389,9 +1215,12 @@ export const defaultGraph = {
         id: 266,
         type: "Note",
         pos: [4238, -694],
-        size: [359.29657855835467, 62.9340746503467],
+        size: {
+            "0": 359.29656982421875,
+            "1": 62.93407440185547
+        },
         flags: {},
-        order: 11,
+        order: 9,
         mode: 0,
         properties: {
             text: ""
@@ -1399,6 +1228,189 @@ export const defaultGraph = {
         widgets_values: ["Magic Album - SR module\nApply Identity-specific VCD with super resolution model."],
         color: "#432",
         bgcolor: "#653"
+    }, {
+        id: 263,
+        type: "Note",
+        pos: [-423, 1338],
+        size: {
+            "0": 504.50054931640625,
+            "1": 130.17208862304688
+        },
+        flags: {},
+        order: 10,
+        mode: 0,
+        properties: {
+            text: ""
+        },
+        widgets_values: ["Magic Album - Prompt Travel\nUse Batch Prompt Schedule to assign different prompts for different range of frames.\n\nFor example, with the SCG Emotions Pack from (https://civitai.com/models/8860), the user can change the expression of the character by typing:\n\n\"0\":\"embedding:emotion-grin\",\n\"8\":\"embedding:emotion-smile\"\n\n"],
+        color: "#432",
+        bgcolor: "#653"
+    }, {
+        id: 60,
+        type: "Reroute",
+        pos: [1120, 1450],
+        size: [75, 26],
+        flags: {},
+        order: 25,
+        mode: 0,
+        inputs: [{
+            name: "",
+            type: "*",
+            link: 99
+        }],
+        outputs: [{
+            name: "",
+            type: "BASIC_PIPE",
+            links: [138],
+            slot_index: 0
+        }],
+        properties: {
+            showOutputText: false,
+            horizontal: false
+        }
+    }, {
+        id: 262,
+        type: "MagicAlbum3DGaussianNoise",
+        pos: [736, 988],
+        size: {
+            "0": 336,
+            "1": 178
+        },
+        flags: {},
+        order: 13,
+        mode: 0,
+        inputs: [{
+            name: "batch_size",
+            type: "INT",
+            link: 422,
+            widget: {
+                name: "batch_size"
+            }
+        }],
+        outputs: [{
+            name: "LATENT",
+            type: "LATENT",
+            links: [420],
+            shape: 3,
+            slot_index: 0
+        }],
+        properties: {
+            "Node name for S&R": "MagicAlbum3DGaussianNoise"
+        },
+        widgets_values: [512, 512, 1, 674280267919247, "randomize", 0.15]
+    }, {
+        id: 261,
+        type: "ADE_AnimateDiffLoaderWithContext",
+        pos: [311, 85],
+        size: {
+            "0": 315,
+            "1": 230
+        },
+        flags: {
+            collapsed: true
+        },
+        order: 16,
+        mode: 0,
+        inputs: [{
+            name: "model",
+            type: "MODEL",
+            link: 415
+        }, {
+            name: "context_options",
+            type: "CONTEXT_OPTIONS",
+            link: 416
+        }, {
+            name: "motion_lora",
+            type: "MOTION_LORA",
+            link: 417
+        }, {
+            name: "ad_settings",
+            type: "AD_SETTINGS",
+            link: null
+        }, {
+            name: "sample_settings",
+            type: "SAMPLE_SETTINGS",
+            link: null
+        }, {
+            name: "ad_keyframes",
+            type: "AD_KEYFRAMES",
+            link: null
+        }],
+        outputs: [{
+            name: "MODEL",
+            type: "MODEL",
+            links: [418],
+            shape: 3,
+            slot_index: 0
+        }],
+        properties: {
+            "Node name for S&R": "ADE_AnimateDiffLoaderWithContext"
+        },
+        widgets_values: ["mm_sd_v15_v2.ckpt", "autoselect", 1, true]
+    }, {
+        id: 202,
+        type: "BatchPromptSchedule",
+        pos: [148, 1176],
+        size: [379.556396484375, 501.3092041015625],
+        flags: {},
+        order: 15,
+        mode: 0,
+        inputs: [{
+            name: "clip",
+            type: "CLIP",
+            link: 406
+        }, {
+            name: "max_frames",
+            type: "INT",
+            link: 270,
+            widget: {
+                name: "max_frames"
+            }
+        }],
+        outputs: [{
+            name: "POS",
+            type: "CONDITIONING",
+            links: [373],
+            shape: 3,
+            slot_index: 0
+        }, {
+            name: "NEG",
+            type: "CONDITIONING",
+            links: [],
+            shape: 3,
+            slot_index: 1
+        }],
+        properties: {
+            "Node name for S&R": "BatchPromptSchedule"
+        },
+        widgets_values: ["\"0\":\"\",\n\"8\":\"\"", 120, false, "a photo of embedding:altman-gstep-200 man in superman costume in the outer space, stars in the background", "", 0, 0, 0, 0, 0]
+    }, {
+        id: 196,
+        type: "ADE_AnimateDiffLoRALoader",
+        pos: [-375, -182],
+        size: {
+            "0": 355.20001220703125,
+            "1": 82
+        },
+        flags: {},
+        order: 11,
+        mode: 0,
+        inputs: [{
+            name: "prev_motion_lora",
+            type: "MOTION_LORA",
+            link: null
+        }],
+        outputs: [{
+            name: "MOTION_LORA",
+            type: "MOTION_LORA",
+            links: [417],
+            shape: 3,
+            slot_index: 0
+        }],
+        properties: {
+            "Node name for S&R": "ADE_AnimateDiffLoRALoader"
+        },
+        widgets_values: ["v2_lora_ZoomIn.ckpt", 0.6]
     }],
     links: [
         [47, 10, 0, 35, 0, "IMAGE"],
